@@ -7,33 +7,47 @@
         console.log('ready');
         var currentURL = window.location.href;
         console.log(currentURL);
+        $('.variations_form.cart .value select').hide();
+
 
         $('.variation-value').on('click', function () {
             // Get the value of the clicked variation
             var selectedValue = $(this).text();
-
-            console.log("Selected Value: " + selectedValue);
-
-            // Find the option in the dropdowns with the same value
+        
+            // Remove "active" class from all variation values
+            $('.variation-value').removeClass('active');
+        
+            // Add "active" class to the clicked variation value
+            $(this).addClass('active');
+        
+            // Find the options in both dropdowns with the same value
             var $optionSize = $('#pa_size option').filter(function () {
-                console.log("Option Size Value: " + $(this).val());
-                return $(this).val() === selectedValue; // Compare against value instead of text
+                return $(this).val() === selectedValue;
             });
-
+        
             var $optionColor = $('#pa_color option').filter(function () {
-                console.log("Option Color Value: " + $(this).val());
-                return $(this).val() === selectedValue; // Compare against value instead of text
+                return $(this).val() === selectedValue;
             });
-
-            // If the option is found, select it and trigger change event for both dropdowns
+        
+            // If the option is found in the size dropdown, select it
             if ($optionSize.length) {
-                $('#pa_size').val($optionSize.val()).change();
+                $('#pa_size').val($optionSize.val());
             }
-
+        
+            // If the option is found in the color dropdown, select it
             if ($optionColor.length) {
-                $('#pa_color').val($optionColor.val()).change();
+                $('#pa_color').val($optionColor.val());
             }
+        
+            // Trigger change event for both dropdowns to update their UI
+            $('#pa_size').change();
+            $('#pa_color').change();
+        
+            // Hide the dropdown menus
         });
+        
+        
+        
 
     });
 

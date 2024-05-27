@@ -71,3 +71,46 @@ Version: 1.0
 .single_variation_wrap .woocommerce-variation-add-to-cart {
     margin-top: 10px;
 }
+
+.variation-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /*     margin-bottom: 10px; */
+}
+
+.variation-value {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.variation-value:hover {
+    background-color: #e0e0e0;
+}
+
+.variation-value.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.reset_variations {
+    margin-top: 20px;
+}
+
+.variations tr {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.variations tr th {
+    padding: 0px;
+}
+
+.variations tr td {
+    margin-left: 30px;
+
+}
