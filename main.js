@@ -13,41 +13,48 @@
         $('.variation-value').on('click', function () {
             // Get the value of the clicked variation
             var selectedValue = $(this).text();
-        
-            // Remove "active" class from all variation values
-            $('.variation-value').removeClass('active');
-        
-            // Add "active" class to the clicked variation value
-            $(this).addClass('active');
-        
-            // Find the options in both dropdowns with the same value
+
+            console.log("Selected Value: " + selectedValue);
+
+            // Find the option in the dropdowns with the same value
             var $optionSize = $('#pa_size option').filter(function () {
-                return $(this).val() === selectedValue;
+                console.log("Option Size Value: " + $(this).val());
+                return $(this).val() === selectedValue; // Compare against value instead of text
             });
-        
+
             var $optionColor = $('#pa_color option').filter(function () {
-                return $(this).val() === selectedValue;
+                console.log("Option Color Value: " + $(this).val());
+                return $(this).val() === selectedValue; // Compare against value instead of text
             });
-        
-            // If the option is found in the size dropdown, select it
+
+            // If the option is found, select it and trigger change event for both dropdowns
             if ($optionSize.length) {
-                $('#pa_size').val($optionSize.val());
+                $('#pa_size').val($optionSize.val()).change();
             }
-        
-            // If the option is found in the color dropdown, select it
+
             if ($optionColor.length) {
-                $('#pa_color').val($optionColor.val());
+                $('#pa_color').val($optionColor.val()).change();
             }
-        
-            // Trigger change event for both dropdowns to update their UI
-            $('#pa_size').change();
-            $('#pa_color').change();
-        
-            // Hide the dropdown menus
         });
-        
-        
-        
+
+        $('.pa_color .variation-value').on('click', function () {
+            // Remove 'active' class from all .pa_color elements
+            $('.pa_color .variation-value').removeClass('active');
+            // Add 'active' class to the clicked element
+            $(this).addClass('active');
+        });
+
+        $('.pa_size .variation-value').on('click', function () {
+            // Remove 'active' class from all .pa_size elements
+            $('.pa_size .variation-value').removeClass('active');
+            // Add 'active' class to the clicked element
+            $(this).addClass('active');
+        });
+
+        $(".reset_variations").on('click', function () {
+            $('.pa_color .variation-value').removeClass('active');
+            $('.pa_size .variation-value').removeClass('active');
+        });
 
     });
 

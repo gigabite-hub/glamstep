@@ -114,3 +114,25 @@ Version: 1.0
     margin-left: 30px;
 
 }
+
+.woocommerce-info {
+    background-color: #ffe1e1;
+    color: #000;
+    padding: 10px;
+    border: 1px solid #d40511;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(158, 158, 158, 0.14);
+}
+
+.woocommerce-info:before {
+    color: #d40511;
+}
+
+.single-product .product .entry-summary .stock {
+    background-color: #ffe1e1;
+    color: #000;
+    padding: 10px;
+    border: 1px solid #d40511;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(158, 158, 158, 0.14);
+}
