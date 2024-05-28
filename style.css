@@ -136,3 +136,70 @@ Version: 1.0
     align-items: center;
     box-shadow: 10px 10px 10px rgba(158, 158, 158, 0.14);
 }
+
+/* Add to your theme's style.css */
+.limited-stock-label {
+    font-size: 24px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.stock-quantity {
+    font-size: 14px;
+    color: green;
+    margin-bottom: 5px;
+}
+
+.stock-info {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.stock-info .stock-quantity:first-child {
+    margin-left: 0px;
+}
+
+.stock-info .stock-quantity {
+    margin-left: 20px;
+}
+
+/* Add to your theme's style.css */
+.order-timeline {
+    display: flex;
+    flex-direction: row;
+}
+
+.timeline-checkpoint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    margin: 20px;
+}
+
+.timeline-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 8px 12px #cacaca;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+
+.timeline-label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.timeline-date {
+    color: gray;
+}
+
+.single-product .product.product-type-variable .variations_form .single_variation_wrap .woocommerce-variation-add-to-cart {
+    flex-wrap: wrap;
+}

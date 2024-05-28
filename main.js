@@ -56,6 +56,7 @@
             $('.pa_size .variation-value').removeClass('active');
         });
 
+        
     });
 
 }(jQuery));
