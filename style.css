@@ -203,3 +203,24 @@ Version: 1.0
 .single-product .product.product-type-variable .variations_form .single_variation_wrap .woocommerce-variation-add-to-cart {
     flex-wrap: wrap;
 }
+
+.quick-sale ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.quick-sale ul li {
+    width: 25%;
+}
+
+.main-navigation ul>li.sales>a {
+    color: red;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 480px) {
+
+    .quick-sale ul li {
+        width: 50%;
+    }
+}
